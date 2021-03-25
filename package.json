@@ -1,7 +1,25 @@
 {
   "name": "basic-minecraft-proxy",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "A node.js Minecraft proxy created with node-minecraft-protocol",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "minecraft-protocol": "^1.24.1",
+    "minecraft-data": "^2.81.0",
+    "node-rsa": "^1.1.1",
+    "queuejs": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8bitFra/node-minecraft-proxy.git"
+  },
   "keywords": [
     "minecraft",
     "minecraft-protocol",
@@ -9,31 +27,10 @@
     "minecraft-proxy",
     "mc-proxy"
   ],
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Dario Crosa",
+  "author": "Dario Crosa, 8bitFra",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/7ixi0/node-minecraft-proxy.git"
-  },
   "bugs": {
-    "url": "https://github.com/7ixi0/node-minecraft-proxy/issues"
+    "url": "https://github.com/8bitFra/node-minecraft-proxy/issues"
   },
-  "dependencies": {
-    "minecraft-data": "^2.26.0",
-    "minecraft-protocol": "^1.5.1",
-    "node-rsa": "^0.4.2",
-    "queuejs": "^0.1.0"
-  },
-  "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.1.0"
-  }
+  "homepage": "https://github.com/8bitFra/node-minecraft-proxy#readme"
 }
