@@ -36,7 +36,8 @@ let localServerOptions = {
   'port': '25578',
   'version': '1.12.1',
   'online-mode': false,
-  'motd': 'nodejs minecraft proxy'
+  'motd': 'nodejs minecraft proxy',
+  'maxPlayers': 50
 }
 
 let serverList = {
