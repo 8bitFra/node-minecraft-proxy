@@ -59,6 +59,7 @@ class Proxy extends mc.Server {
       host: newServer.host,
       port: newServer.port,
       username: remoteClient.username,
+      //accessToken: remoteClient.session,
       keepAlive: false, // keep alive is set to false because the remote server will send the packets and the remote client will respond
       version: remoteClient.version
     })

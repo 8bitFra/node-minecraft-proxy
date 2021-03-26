@@ -7,8 +7,9 @@
     "example": "examples"
   },
   "dependencies": {
-    "minecraft-protocol": "^1.24.1",
+    "image-to-base64": "^2.1.1",
     "minecraft-data": "^2.81.0",
+    "minecraft-protocol": "^1.24.1",
     "node-rsa": "^1.1.1",
     "queuejs": "^1.0.0"
   },

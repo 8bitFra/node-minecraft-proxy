@@ -26,7 +26,7 @@ function createProxy (localServerOptions = {}, serverList = {}, proxyOptions = {
     'server-port': serverPort,
     port = serverPort || 25565,
     motd = 'A Minecraft server',
-    'max-players': maxPlayers = 20,
+    maxPlayers = 20,
     version,
     favicon,
     customPackets
