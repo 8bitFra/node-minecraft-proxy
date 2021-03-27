@@ -34,9 +34,6 @@ class Proxy extends mc.Server {
         whitelist = undefined;
       }
 
-      console.log(whitelist!=undefined);
-      console.log(whitelist.users.includes(remoteClient.username))
-
 
       if(whitelist!=undefined && whitelist.users.includes(remoteClient.username))
       {
