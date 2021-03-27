@@ -2,6 +2,7 @@ const mc = require('minecraft-protocol')
 
 const replayPackets = require('./Proxy/packetReplayer')
 const addListeners = require('./Proxy/addListeners')
+const fs = require('fs')
 
 class Proxy extends mc.Server {
   /**
@@ -19,23 +20,49 @@ class Proxy extends mc.Server {
 
     let self = this
     self.on('login', (remoteClient) => {
-      let id = remoteClient.id
 
-      remoteClient.on('end', () => {
-        if (remoteClient.localClient) remoteClient.localClient.end()
-      })
+      let rawdata;
+      let whitelist;
 
-      remoteClient.on('error', () => {
-        if (remoteClient.localClient) remoteClient.localClient.end()
-      })
-
-      this.clients[id].isFirstConnection = true
-      this.clients[id].currentServer = ''
-
-      if (this.autoConnect) {
-        let defaultServer = this.getDefaultServerName()
-        this.setRemoteServer(id, defaultServer)
+      try 
+      {
+        rawdata = fs.readFileSync('./whitelist.json');
+        whitelist = JSON.parse(rawdata);
+      } catch (error) 
+      {
+        rawdata = undefined;
+        whitelist = undefined;
       }
+
+      console.log(whitelist!=undefined);
+      console.log(whitelist.users.includes(remoteClient.username))
+
+
+      if(whitelist!=undefined && whitelist.users.includes(remoteClient.username))
+      {
+        let id = remoteClient.id
+
+        remoteClient.on('end', () => {
+          if (remoteClient.localClient) remoteClient.localClient.end()
+        })
+
+        remoteClient.on('error', () => {
+          if (remoteClient.localClient) remoteClient.localClient.end()
+        })
+
+        this.clients[id].isFirstConnection = true
+        this.clients[id].currentServer = ''
+
+        if (this.autoConnect) {
+          let defaultServer = this.getDefaultServerName()
+          this.setRemoteServer(id, defaultServer)
+        }
+      }
+      else
+      {
+        remoteClient.end();
+      }
+      
     })
   }
 
