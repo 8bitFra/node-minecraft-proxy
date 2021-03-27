@@ -12,7 +12,7 @@ function handleCommands (client, proxy, localServerOptions, proxyOptions) {
             split[1]
           ]
         }
-        client.write('chat', { message: JSON.stringify(msg), position: 0 })
+        client.write('chat', { message: JSON.stringify(msg), position: 0, sender: 0 })
       }
     }
   })

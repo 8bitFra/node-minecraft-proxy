@@ -15,12 +15,7 @@ function replayer (remoteClient, localClient, callback) {
 
   localClient.on('login', (data, metadata) => {
     sentRespawn = true
-    remoteClient.write('respawn', {
-      dimension: data.dimension,
-      difficulty: data.difficulty,
-      gamemode: data.gameMode,
-      levelType: data.levelType
-    })
+    remoteClient.write('respawn', data)
 
     while (packets.size > 0) {
       let element = packets.deq()
