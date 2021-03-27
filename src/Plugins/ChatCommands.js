@@ -7,10 +7,7 @@ function handleCommands (client, proxy, localServerOptions, proxyOptions) {
       } else {
         const msg = {
           color: 'red',
-          translate: 'commands.generic.selector_argument',
-          with: [
-            split[1]
-          ]
+          translate: 'commands.generic.selector_argument'
         }
         client.write('chat', { message: JSON.stringify(msg), position: 0, sender: 0 })
       }

@@ -19,7 +19,8 @@ Simple Minecraft proxy written in Node.js using the node-minecraft-protocol libr
 
 ## Installation
 
-`npm install basic-minecraft-proxy`
+`git clone https://github.com/8bitFra/node-minecraft-proxy.git`
+Create your index.js in the folder and start your proxy
 
 ## Examples
 
@@ -30,7 +31,7 @@ See also `./examples/` for other examples
 This example shows how to create a new proxy and how to the options are passed.
 
 ```js
-const McProxy = require('minecraft-proxy');
+const McProxy = require('./proxy.js');
 
 let localServerOptions = {
   'port': '25578',
