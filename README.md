@@ -20,6 +20,7 @@ Simple Minecraft proxy written in Node.js using the node-minecraft-protocol libr
 ## Installation
 
 `git clone https://github.com/8bitFra/node-minecraft-proxy.git`
+
 Create your index.js in the folder and start your proxy
 
 ## Examples
