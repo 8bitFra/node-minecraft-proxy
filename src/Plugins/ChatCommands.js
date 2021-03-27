@@ -7,7 +7,8 @@ function handleCommands (client, proxy, localServerOptions, proxyOptions) {
       } else {
         const msg = {
           color: 'red',
-          translate: 'commands.generic.selector_argument'
+          translate: 'chat.type.text',
+          with:[{"text":"Syntax Error"}]
         }
         client.write('chat', { message: JSON.stringify(msg), position: 0, sender: 0 })
       }
