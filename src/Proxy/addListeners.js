@@ -24,11 +24,11 @@ function addListeners (remoteClient, that) {
 
         if(!metadata.name=='chat')
         {
-          remoteClient.localClient.write(metadata.name, data);
+          if(metadata.name != 'displayed_recipe' && metadata.name!='recipe_book') remoteClient.localClient.write(metadata.name, data);
         }
         else if(ignoredcheck(data.message,ignored))
         {
-          remoteClient.localClient.write(metadata.name, data);
+          if(metadata.name != 'displayed_recipe' && metadata.name!='recipe_book') remoteClient.localClient.write(metadata.name, data);
         }
 
       }
